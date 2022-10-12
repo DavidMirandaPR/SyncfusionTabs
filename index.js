@@ -13,11 +13,6 @@ const MyTabsComponent = () => {
   const addButtonClicked = (e) => {
     let tabNumber = counter;
     setCounter((prev) => prev + 1);
-    let tabItemObject = JSON.stringify({
-      header: { text: `Tab #${tabsRef.current.items.length}` },
-      content: () => <h1>{`Tab #${tabNumber}`}</h1>,
-      id: `TABID-${tabNumber}`,
-    });
     let newTabItem = [
       {
         id: `TABID-${tabNumber}`,
@@ -40,7 +35,7 @@ const MyTabsComponent = () => {
   const refreshTabs = () => {
     tabsRef.current.refresh();
   };
-  let tabItemsHeaderText = [{ text: 'Home' }];
+
   return (
     <div id="container">
       <p>Recreation Steps:</p>
